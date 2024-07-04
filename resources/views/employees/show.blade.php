@@ -12,6 +12,11 @@
     @if ($employee->photo)
         <img src="{{ Storage::disk('employee_photos')->url($employee->photo) }}" alt="{{ $employee->name }}"
             width="200">
+        <p>
+            <a href="{{ Storage::disk('employee_photos')->url($employee->photo) }}" target="_blank">
+                <p>Photo: {{ Storage::disk('employee_photos')->url($employee->photo) }}</p>
+            </a>
+        </p>
     @endif
     <br>
     <a href="{{ route('employees.index') }}">Back to Employees</a>
